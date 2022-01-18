@@ -3,6 +3,7 @@ import {StyleSheet, useWindowDimensions, View} from 'react-native';
 import Svg, {Path} from 'react-native-svg';
 import {COLOR} from '../../common/constants';
 import BottomTabButton from './BottomTabButton';
+import {useNavigation} from '@react-navigation/native';
 
 const BottomTab = ({user}) => {
   const {width, height} = useWindowDimensions();
@@ -23,6 +24,7 @@ const BottomTab = ({user}) => {
       } 0 a 1 1 0 0 1 0 -${barHeight}`,
     [pad, widthPart, barHeight],
   );
+  const navigation = useNavigation();
 
   return (
     <View
@@ -49,12 +51,14 @@ const BottomTab = ({user}) => {
           icon={'airplane-takeoff'}
           height={barHeight}
           width={widthPart}
+          onPress={() => navigation.navigate('Holiday')}
         />
         <BottomTabButton
           label={'Notes'}
           icon={'clipboard-text'}
           height={barHeight}
           width={widthPart}
+          onPress={() => navigation.navigate('Notes')}
         />
         <BottomTabButton
           label={'Home'}
@@ -68,12 +72,14 @@ const BottomTab = ({user}) => {
           icon={'camera-iris'}
           height={barHeight}
           width={widthPart}
+          onPress={() => navigation.navigate('Photos')}
         />
         <BottomTabButton
           label={'Profile'}
           icon={'account'}
           height={barHeight}
           width={widthPart}
+          onPress={() => navigation.navigate('Profile', {user: user})}
         />
       </View>
     </View>
