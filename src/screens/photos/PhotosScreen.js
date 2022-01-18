@@ -32,13 +32,17 @@ const PhotosScreen = ({navigation}) => {
   };
 
   const openCamera = async () => {
-    const options = {
-      mediaType: 'photo',
-      quality: 0.5,
-      saveToPhotos: true,
-    };
-    const result = await launchCamera(options);
-    setPhotos([result.assets[0], ...photos]);
+    try {
+      const options = {
+        mediaType: 'photo',
+        quality: 0.5,
+        saveToPhotos: true,
+      };
+      const result = await launchCamera(options);
+      setPhotos([result.assets[0], ...photos]);
+    } catch (e) {
+    } finally {
+    }
   };
 
   const openPhoto = index => {
