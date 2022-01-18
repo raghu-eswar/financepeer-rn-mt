@@ -113,7 +113,7 @@ const Banner = () => {
           ]}
         />
       </View>
-      <View style={(styles.absolute, styles.center, styles.buttonLeft)}>
+      <View style={[styles.absolute, styles.center, styles.buttonLeft]}>
         <TouchableOpacity
           onPress={() =>
             flatlist.current &&
@@ -127,7 +127,7 @@ const Banner = () => {
           />
         </TouchableOpacity>
       </View>
-      <View style={(styles.absolute, styles.center, styles.buttonRight)}>
+      <View style={[styles.absolute, styles.center, styles.buttonRight]}>
         <TouchableOpacity
           onPress={() =>
             flatlist.current &&
