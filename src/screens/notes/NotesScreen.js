@@ -36,8 +36,13 @@ const NotesScreen = ({navigation, route}) => {
     }
   };
 
+  const onBack = () => {
+    navigation.goBack();
+    return true;
+  };
+
   return (
-    <HandleBack>
+    <HandleBack onBack={onBack}>
       <View style={styles.root}>
         <View style={styles.container}>
           {!!notes && !!notes.length ? (

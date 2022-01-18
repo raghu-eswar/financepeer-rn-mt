@@ -16,7 +16,7 @@ import {COLOR} from '../../common/constants';
 import HandleBack from '../../components/HandleBack';
 import Loader from '../../components/Loader';
 
-const PhotosScreen = () => {
+const PhotosScreen = ({navigation}) => {
   const {width, height} = useWindowDimensions();
   const [photos, setPhotos] = useState([]);
   const [showModel, setShowModel] = useState(false);
@@ -46,8 +46,13 @@ const PhotosScreen = () => {
     setActiveIndex(index);
   };
 
+  const onBack = () => {
+    navigation.goBack();
+    return true;
+  };
+
   return (
-    <HandleBack>
+    <HandleBack onBack={onBack}>
       <SafeAreaView style={styles.root}>
         <View style={styles.container}>
           <View style={styles.flex}>

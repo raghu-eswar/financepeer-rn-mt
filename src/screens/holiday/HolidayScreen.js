@@ -3,9 +3,14 @@ import {StyleSheet, View} from 'react-native';
 import Carousel from '../../components/carousel';
 import HandleBack from '../../components/HandleBack';
 
-const HolidayScreen = () => {
+const HolidayScreen = ({navigation}) => {
+  const onBack = () => {
+    navigation.goBack();
+    return true;
+  };
+
   return (
-    <HandleBack>
+    <HandleBack onBack={onBack}>
       <View style={styles.container}>
         <View style={styles.flex}>
           <Carousel />

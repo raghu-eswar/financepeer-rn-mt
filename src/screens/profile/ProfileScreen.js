@@ -83,8 +83,13 @@ const ProfileScreen = ({navigation, route}) => {
     );
   };
 
+  const onBack = () => {
+    navigation.goBack();
+    return true;
+  };
+
   return (
-    <HandleBack>
+    <HandleBack onBack={onBack}>
       {user && (
         <View style={styles.root}>
           <View style={styles.container}>
