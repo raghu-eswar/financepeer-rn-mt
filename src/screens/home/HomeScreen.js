@@ -32,7 +32,7 @@ const HomeScreen = () => {
   };
 
   return (
-    <HandleBack>
+    <View style={styles.flex}>
       {user && (
         <SafeAreaView style={styles.root}>
           <View style={styles.container}>
@@ -69,7 +69,7 @@ const HomeScreen = () => {
       )}
       <BottomTab user={user} />
       {isFetching && <Loader />}
-    </HandleBack>
+    </View>
   );
 };
 
